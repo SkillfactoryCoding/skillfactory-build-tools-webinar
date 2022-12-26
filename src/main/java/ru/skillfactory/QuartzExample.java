@@ -2,6 +2,7 @@ package ru.skillfactory;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
+import org.apache.log4j.BasicConfigurator;
 
 import java.util.Date;
 
@@ -12,6 +13,9 @@ import static org.quartz.TriggerBuilder.newTrigger;
 public class QuartzExample {
 
     public static void main(String[] args) throws SchedulerException, InterruptedException {
+
+        BasicConfigurator.configure();
+
 
         SchedulerFactory sf = new StdSchedulerFactory();
         Scheduler scheduler = sf.getScheduler();
